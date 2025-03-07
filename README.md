@@ -1,10 +1,11 @@
 # quarto2ipynb
 Batch convert quarto qmd file into ipynb file 
 
+- 打开tkinter文件对话框
+- 选定文件目录
+- 遍历目录中文件，若为`qmd`文件，执行`quarto convert`，将qmd文件转为ipynb文件
 
-
-python执行cmd命令
-
+- [ ] python执行cmd命令
 
 ```
 import subprocess
@@ -18,7 +19,16 @@ print("错误信息:", result.stderr)
 print("返回码:", result.returncode)
 ```
 
-tkinter目录窗口
+> 注意编码格式，若文件名有中文，需指定为`utf-8`
+
+```
+import subprocess
+ 
+result = subprocess.run(['your_command'], stdout=subprocess.PIPE, text=True, encoding='utf-8')
+print(result.stdout)
+```
+
+- [ ] tkinter目录窗口
 
 ```
 import tkinter as tk
@@ -40,7 +50,7 @@ select_button.pack()
 root.mainloop()
 ```
 
-python遍历目录
+- [ ] python遍历目录
 
 ```
 """
@@ -54,7 +64,7 @@ for root, dirs, files in os.walk(path):
             
 ```
 
-python 文件后缀获取
+- [ ] python 文件后缀获取
 
 ```
 import os
@@ -64,11 +74,4 @@ file_extension = os.path.splitext(filename)[1][1:]
 print(file_extension)  # 输出结果：py
 ```
 
-```
-import subprocess
- 
-result = subprocess.run(['your_command'], stdout=subprocess.PIPE, text=True, encoding='utf-8')
-print(result.stdout)
-```
-
-git上传代码步骤
+- [ ] git上传代码步骤
